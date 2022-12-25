@@ -10,8 +10,8 @@ import { API_URL } from "../../url";
 const FormOrders = () => {
 	const { id } = useParams();
 	const [orders, setOrders] = useState([]);
-	const [sudahDikirim, setSudahDikirim] = useState([]);
-	const [dikirimTanggal, setDikirimTanggal] = useState([]);
+	const [sudahDikirim] = useState([]);
+	const [dikirimTanggal] = useState([]);
 	const navigate = useNavigate();
 	useEffect(() => {
 		getOrders();
@@ -19,20 +19,6 @@ const FormOrders = () => {
 	const getOrders = async () => {
 		const response = await axios.get(API_URL + "/order/admin/get");
 		setOrders(response.data);
-	};
-	const updateStatus = async (e) => {
-		e.preventDefault();
-		try {
-			await axios.patch(API_URL + `/order/update/${id}`, {
-				sudahDikirim: sudahDikirim,
-				dikirimTanggal: dikirimTanggal,
-			});
-			navigate("/admin/order");
-		} catch (error) {
-			if (error.response) {
-				console.log(error.response);
-			}
-		}
 	};
 
 	return (

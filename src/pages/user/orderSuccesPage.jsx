@@ -1,13 +1,5 @@
-import React, { useEffect } from "react";
-import {
-	MDBCard,
-	MDBCardBody,
-	MDBCol,
-	MDBContainer,
-	MDBIcon,
-	MDBRow,
-	MDBTypography,
-} from "mdb-react-ui-kit";
+import React from "react";
+import { MDBContainer } from "mdb-react-ui-kit";
 import { Button } from "react-bootstrap";
 import { useCart } from "react-use-cart";
 

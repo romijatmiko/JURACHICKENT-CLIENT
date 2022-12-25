@@ -1,13 +1,5 @@
 import HashLoader from "react-spinners/HashLoader";
-import {
-	MDBCard,
-	MDBCardBody,
-	MDBCol,
-	MDBContainer,
-	MDBIcon,
-	MDBRow,
-	MDBTypography,
-} from "mdb-react-ui-kit";
+import { MDBContainer } from "mdb-react-ui-kit";
 import { useParams } from "react-router-dom";
 import React, { useEffect } from "react";
 

@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/loading";
-import { useDispatch, useSelector } from "react-redux";
-import { Button, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
 import { useCart } from "react-use-cart";
 import Modal from "react-bootstrap/Modal";
 import { API_URL } from "../../url";
@@ -41,10 +40,10 @@ export const Details = () => {
 	const [stok, setStok] = useState("");
 	const [img, setImg] = useState("");
 	const [uuid, setUuid] = useState("");
-	const [msg, setMsg] = useState("");
-	const [data, setData] = useState("");
+	const [setMsg] = useState("");
+	const [setData] = useState("");
 	const { id } = useParams();
-	const { isError, isLoading } = useSelector((state) => state.auth);
+	const { isLoading } = useSelector((state) => state.auth);
 	useEffect(() => {
 		const getProductById = async () => {
 			try {
@@ -75,9 +74,7 @@ export const Details = () => {
 			quantity: 1,
 		},
 	];
-	const { items, addId, addItem, emptyCart } = useCart();
-
-	const [show, setShow] = useState(false);
+	const { addItem } = useCart();
 
 	return (
 		<div>

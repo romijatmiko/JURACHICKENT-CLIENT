@@ -1,3 +1,4 @@
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,9 +7,7 @@ import logo from "./logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../../auth/authSlice";
 import { useNavigate, useLocation } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+
 import { useCart } from "react-use-cart";
 
 export function NavbarJura() {

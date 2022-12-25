@@ -1,13 +1,13 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Card } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { API_URL } from "../../url";
 
 const Register = () => {
@@ -19,9 +19,8 @@ const Register = () => {
 	const [kode_pos, setKode_pos] = useState("");
 	const [password_user, setPassword_user] = useState("");
 	const [confPassword, setConfPassword] = useState("");
-	const [role, setRole] = useState("");
+	const [setRole] = useState("");
 	const [msg, setMsg] = useState("");
-	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const { isError, isLoading } = useSelector((state) => state.auth);
 

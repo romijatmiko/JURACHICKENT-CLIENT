@@ -3,8 +3,6 @@ import { FooterJura } from "../../components/user/FooterJura";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Loading from "../../components/loading";
 import Message from "../../components/error";
 import { useSelector } from "react-redux";

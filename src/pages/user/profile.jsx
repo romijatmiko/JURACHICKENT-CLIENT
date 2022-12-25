@@ -9,9 +9,6 @@ import {
 	MDBBtn,
 	MDBProgress,
 	MDBProgressBar,
-	MDBIcon,
-	MDBListGroup,
-	MDBListGroupItem,
 } from "mdb-react-ui-kit";
 import { NavbarJura } from "../../components/user/navbarj";
 import { FooterJura } from "../../components/user/FooterJura";
@@ -19,7 +16,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
 import { API_URL } from "../../url";
 
 export default function Profile() {
@@ -29,10 +25,9 @@ export default function Profile() {
 	const [alamat, setAlamat] = useState("");
 	const [kabupaten, SetKabupaten] = useState("");
 	const [kode_pos, setKode_pos] = useState("");
-	const [msg, setMsg] = useState("");
+	const [setMsg] = useState("");
 	const { id } = useParams();
 	const yes = "true";
-	const j = "true";
 
 	useEffect(() => {
 		const user = async () => {

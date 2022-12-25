@@ -1,14 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { LoginUser, reset } from "../../auth/authSlice";
 import { Card } from "react-bootstrap";
 import Loading from "../../components/loading";
-import Message from "../../components/error";
 
 const LoginJura = () => {
 	const [email_user, setEmail_user] = useState("");

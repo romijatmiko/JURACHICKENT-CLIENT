@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "./logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { LogOut, reset } from "../../auth/authSlice";
@@ -10,7 +10,6 @@ import { LogOut, reset } from "../../auth/authSlice";
 const HeaderJura = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const { user } = useSelector((state) => state.auth);
 
 	const logout = () => {
 		dispatch(LogOut());

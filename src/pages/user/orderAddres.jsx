@@ -1,36 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../../components/loading";
-import Message from "../../components/error";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useCart } from "react-use-cart";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
-import {
-	MDBCard,
-	MDBCardBody,
-	MDBCol,
-	MDBContainer,
-	MDBIcon,
-	MDBRow,
-	MDBTypography,
-} from "mdb-react-ui-kit";
+import { MDBContainer } from "mdb-react-ui-kit";
 import { API_URL } from "../../url";
 
 function Alamat() {
 	const { isSucces, isLoading } = useSelector((state) => state.auth);
-	const dispatch = useDispatch();
+
 	const { id } = useParams();
 
 	//order
 
 	const {
-		isEmpty,
 		items,
 		cartTotal,
-		updateItemQuantity,
+
 		totalItems,
 		totalUniqueItems,
 	} = useCart();
@@ -42,7 +32,7 @@ function Alamat() {
 	const [payment_type, setPayment_type] = useState("");
 	const [userJuraUuid, setUserJuraUuid] = useState("");
 	const navigate = useNavigate();
-	const [msg, setMsg] = useState("");
+	const [setMsg] = useState("");
 
 	useEffect(() => {
 		setDetails(items);

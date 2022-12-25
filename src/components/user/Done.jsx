@@ -8,8 +8,6 @@ import {
 	MDBRow,
 	MDBTypography,
 	MDBCardText,
-	MDBRipple,
-	MDBProgressBar,
 } from "mdb-react-ui-kit";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -29,7 +27,6 @@ export default function Done() {
 		setOrders(q.data);
 		setDatas(q.data[0]);
 	};
-
 	const hehehe = [
 		{
 			uuid: orders.uuid,

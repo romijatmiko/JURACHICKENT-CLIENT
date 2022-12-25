@@ -18,11 +18,9 @@ import Keranjang from "./pages/user/keranjang";
 import Register from "./pages/user/register";
 import Details from "./pages/user/menuDetails";
 import { NavbarJura } from "./components/user/navbarj";
-import { useDispatch, useSelector } from "react-redux";
 import { CartProvider } from "react-use-cart";
 import Alamat from "./pages/user/orderAddres";
 import { FooterJura } from "./components/user/FooterJura";
-
 import SuccesPage from "./pages/user/orderSuccesPage";
 import Wow from "./components/user/createOrderLoading";
 import OrderUpdate from "./components/admin/OrderUpdate.jsx";
@@ -36,7 +34,6 @@ import Sampai from "./components/user/Sampai";
 import Done from "./components/user/Done";
 
 function App() {
-	const { isSuccess } = useSelector((state) => state.auth);
 	return (
 		<BrowserRouter>
 			<Routes>

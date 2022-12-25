@@ -8,19 +8,14 @@ import {
 	MDBRow,
 	MDBTypography,
 	MDBCardText,
-	MDBRipple,
-	MDBProgressBar,
 } from "mdb-react-ui-kit";
-import { Button } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { API_URL } from "../../url";
 
 export default function SudahDikirim() {
-	const [datas, setDatas] = useState([]);
 	const { id } = useParams();
 	const [orders, setOrders] = useState([]);
-	const { newData, setNewData } = useState([]);
 	useEffect(() => {
 		getAllOrdersId();
 	}, []);
@@ -45,7 +40,6 @@ export default function SudahDikirim() {
 			response_midtrans: orders.response_midtrans,
 		},
 	];
-	const yes = "true";
 	return (
 		<>
 			{hehehe.map((kocak, index) => (

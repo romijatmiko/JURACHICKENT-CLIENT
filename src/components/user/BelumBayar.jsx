@@ -8,22 +8,18 @@ import {
 	MDBRow,
 	MDBTypography,
 	MDBCardText,
-	MDBRipple,
-	MDBProgressBar,
 } from "mdb-react-ui-kit";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../url";
 
 export default function BelumBayar() {
-	const [datas, setDatas] = useState([""]);
 	const { id } = useParams();
 	const [orders, setOrders] = useState([""]);
 	const navigate = useNavigate();
-	const location = useLocation();
 
 	useEffect(() => {
 		getAllOrdersId();
@@ -31,7 +27,6 @@ export default function BelumBayar() {
 	const getAllOrdersId = async () => {
 		const q = await axios.get(API_URL + "/order/get/" + id);
 		setOrders(q.data);
-		setDatas(q.data[0]);
 	};
 
 	const hehehe = [

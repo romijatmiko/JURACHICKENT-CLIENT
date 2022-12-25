@@ -12,35 +12,24 @@ import {
 	MDBListGroupItem,
 	MDBRipple,
 	MDBRow,
-	MDBTooltip,
 	MDBTypography,
 } from "mdb-react-ui-kit";
 import React, { useState, useEffect } from "react";
 import { NavbarJura } from "../../components/user/navbarj";
 import { FooterJura } from "../../components/user/FooterJura";
 import Loading from "../../components/loading";
-import Message from "../../components/error";
-import { useDispatch, useSelector } from "react-redux";
 import { useCart } from "react-use-cart";
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default function Keranjang() {
-	const {
-		isEmpty,
-		items,
-		cartTotal,
-		updateItemQuantity,
-		removeItem,
-		emptyCart,
-		totalItems,
-		totalUniqueItems,
-	} = useCart();
-	const [kocak, setKocak] = useState("");
+	const { items, cartTotal, updateItemQuantity, removeItem, totalItems } =
+		useCart();
+	const [setKocak] = useState("");
 	useEffect(() => {
 		setKocak(items);
 	}, []);
-	const { isSuccess, isLoading, user } = useSelector((state) => state.auth);
+	const { isLoading } = useSelector((state) => state.auth);
 	const { id } = useParams();
 
 	return (

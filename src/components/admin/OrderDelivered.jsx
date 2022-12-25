@@ -10,9 +10,6 @@ import {
 	MDBIcon,
 	MDBRow,
 	MDBTypography,
-	MDBCardText,
-	MDBRipple,
-	MDBProgressBar,
 } from "mdb-react-ui-kit";
 import { Button } from "react-bootstrap";
 import HeaderJura from "./HeaderJura";
