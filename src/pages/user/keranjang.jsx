@@ -21,6 +21,7 @@ import Loading from "../../components/loading";
 import { useCart } from "react-use-cart";
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 export default function Keranjang() {
 	const { items, cartTotal, updateItemQuantity, removeItem, totalItems } =
