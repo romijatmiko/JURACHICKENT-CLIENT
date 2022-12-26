@@ -32,7 +32,7 @@ function Alamat() {
 	const [payment_type, setPayment_type] = useState("");
 	const [userJuraUuid, setUserJuraUuid] = useState("");
 	const navigate = useNavigate();
-	const [setMsg] = useState("");
+	const [msg, setMsg] = useState("");
 
 	useEffect(() => {
 		setDetails(items);
@@ -60,7 +60,7 @@ function Alamat() {
 			}
 		}
 	};
-
+	console.log(msg);
 	// const loadings = () => {
 	// 	// 👇️ navigate to /contacts
 	// };

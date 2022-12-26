@@ -26,7 +26,7 @@ import { useSelector } from "react-redux";
 export default function Keranjang() {
 	const { items, cartTotal, updateItemQuantity, removeItem, totalItems } =
 		useCart();
-	const [setKocak] = useState("");
+	const [kocak, setKocak] = useState("");
 	useEffect(() => {
 		setKocak(items);
 	}, []);
