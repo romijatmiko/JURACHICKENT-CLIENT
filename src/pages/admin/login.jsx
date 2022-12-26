@@ -20,7 +20,8 @@ const Login = () => {
 		if (user || isSuccess) {
 			navigate("/admin/homepage");
 		}
-	}, [user, isSuccess, navigate]);
+		dispatch(reset());
+	}, [user, isSuccess, dispatch, navigate]);
 
 	const Auth = (e) => {
 		e.preventDefault();
