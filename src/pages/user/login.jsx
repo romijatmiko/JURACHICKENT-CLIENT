@@ -20,8 +20,8 @@ const LoginJura = () => {
 
 	useEffect(() => {
 		if (user || isSuccess) {
-			// navigate("/");
-			// window.location.reload();
+			navigate("/");
+			window.location.reload();
 		}
 	}, [user, isSuccess, dispatch, navigate, location]);
 
