@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
-import { LoginUser } from "../../auth/authSlice";
+import { LoginUser, reset } from "../../auth/authSlice";
 import { Card } from "react-bootstrap";
 import Loading from "../../components/loading";
 
@@ -23,6 +23,7 @@ const LoginJura = () => {
 			navigate("/");
 			window.location.reload();
 		}
+		dispatch(reset());
 	}, [user, isSuccess, dispatch, navigate, location]);
 
 	const Auth = (e) => {

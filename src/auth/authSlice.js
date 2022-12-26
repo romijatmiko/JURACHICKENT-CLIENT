@@ -57,11 +57,13 @@ export const authSlice = createSlice({
 		builder.addCase(LoginUser.fulfilled, (state, action) => {
 			state.isLoading = false;
 			state.isSuccess = true;
+			state.isError = false;
 			state.user = action.payload;
 		});
 		builder.addCase(LoginUser.rejected, (state, action) => {
 			state.isLoading = false;
 			state.isError = true;
+			state.isSuccess = false;
 			state.message = action.payload;
 		});
 
@@ -72,11 +74,13 @@ export const authSlice = createSlice({
 		builder.addCase(getMe.fulfilled, (state, action) => {
 			state.isLoading = false;
 			state.isSuccess = true;
+			state.isError = false;
 			state.user = action.payload;
 		});
 		builder.addCase(getMe.rejected, (state, action) => {
 			state.isLoading = false;
 			state.isError = true;
+			state.isSuccess = false;
 			state.message = action.payload;
 		});
 	},
