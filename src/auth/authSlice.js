@@ -14,7 +14,7 @@ export const LoginUser = createAsyncThunk(
 	async (user, thunkAPI) => {
 		try {
 			const response = await axios.post(
-				"https://jura-server-production.up.railway.app/login",
+				"https://jurachickent-client-c0mouu46q-romijatmiko.vercel.app/login",
 				{
 					email_user: user.email_user,
 					password: user.password,
