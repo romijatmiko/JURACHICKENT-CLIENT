@@ -30,6 +30,8 @@ const LoginJura = () => {
 		e.preventDefault();
 		dispatch(LoginUser({ email_user, password }));
 	};
+	console.log(email_user);
+	console.log(password);
 
 	return (
 		<>
