@@ -14,11 +14,13 @@ export const LoginUser = createAsyncThunk(
 	"user/login",
 	async (user, thunkAPI) => {
 		try {
-			const response = await axios.post(API_URL + "/login", {
-				withCredentials: true,
-				email_user: user.email_user,
-				password: user.password,
-			});
+			const response = await axios.post(
+				"https://jura-server-production.up.railway.app/login",
+				{
+					email_user: user.email_user,
+					password: user.password,
+				}
+			);
 			return response.data;
 		} catch (error) {
 			if (error.response) {
@@ -31,9 +33,9 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 	try {
-		const response = await axios.get(API_URL + "/me", {
-			withCredentials: true,
-		});
+		const response = await axios.get(
+			"https://jura-server-production.up.railway.app/me"
+		);
 		return response.data;
 	} catch (error) {
 		if (error.response) {
@@ -44,9 +46,7 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/logout", async () => {
-	await axios.delete(API_URL + "/logout", {
-		withCredentials: true,
-	});
+	await axios.delete("https://jura-server-production.up.railway.app/logout");
 });
 
 export const authSlice = createSlice({
