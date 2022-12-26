@@ -15,6 +15,7 @@ export const LoginUser = createAsyncThunk(
 	async (user, thunkAPI) => {
 		try {
 			const response = await axios.post(API_URL + "/login", {
+				withCredentials: true,
 				email_user: user.email_user,
 				password: user.password,
 			});
@@ -30,7 +31,9 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 	try {
-		const response = await axios.get(API_URL + "/me");
+		const response = await axios.get(API_URL + "/me", {
+			withCredentials: true,
+		});
 		return response.data;
 	} catch (error) {
 		if (error.response) {
@@ -41,7 +44,9 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/logout", async () => {
-	await axios.delete(API_URL + "/logout");
+	await axios.delete(API_URL + "/logout", {
+		withCredentials: true,
+	});
 });
 
 export const authSlice = createSlice({
