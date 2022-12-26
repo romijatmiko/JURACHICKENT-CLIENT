@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_URL } from "../url";
 
 const initialState = {
 	user: null,
@@ -13,13 +14,10 @@ export const LoginUser = createAsyncThunk(
 	"user/login",
 	async (user, thunkAPI) => {
 		try {
-			const response = await axios.post(
-				"https://jurachickent-client-c0mouu46q-romijatmiko.vercel.app/login",
-				{
-					email_user: user.email_user,
-					password: user.password,
-				}
-			);
+			const response = await axios.post(API_URL + "/login", {
+				email_user: user.email_user,
+				password: user.password,
+			});
 			return response.data;
 		} catch (error) {
 			if (error.response) {
@@ -32,9 +30,7 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 	try {
-		const response = await axios.get(
-			"https://jura-server-production.up.railway.app/me"
-		);
+		const response = await axios.get(API_URL + "/me");
 		return response.data;
 	} catch (error) {
 		if (error.response) {
@@ -45,7 +41,7 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/logout", async () => {
-	await axios.delete("https://jura-server-production.up.railway.app/logout");
+	await axios.delete(API_URL + "/logout");
 });
 
 export const authSlice = createSlice({
