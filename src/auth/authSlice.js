@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../url";
+import { useParams } from "react-router-dom";
 
 const initialState = {
 	user: null,
@@ -30,8 +31,9 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 	try {
+		const { id } = useParams();
 		const response = await axios.get(
-			"https://jura-server-production.up.railway.app/me"
+			`https://jura-server-production.up.railway.app/me/${id}`
 		);
 		return response.data;
 	} catch (error) {
