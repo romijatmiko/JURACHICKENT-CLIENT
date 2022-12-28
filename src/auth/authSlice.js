@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { API_URL } from "../url";
-import { useParams } from "react-router-dom";
 
 const initialState = {
 	user: null,
@@ -31,10 +30,7 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 	try {
-		const { id } = useParams();
-		const response = await axios.get(
-			`https://jura-server-production.up.railway.app/me/${id}`
-		);
+		const response = await axios.get(API_URL + "/me");
 		return response.data;
 	} catch (error) {
 		if (error.response) {
@@ -45,7 +41,7 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/logout", async () => {
-	await axios.delete("https://jura-server-production.up.railway.app/logout");
+	await axios.delete(API_URL + "/logout");
 });
 
 export const authSlice = createSlice({
