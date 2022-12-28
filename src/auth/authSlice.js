@@ -14,13 +14,10 @@ export const LoginUser = createAsyncThunk(
 	"user/login",
 	async (user, thunkAPI) => {
 		try {
-			const response = await axios.post(
-				"https://jura-server-production.up.railway.app/login",
-				{
-					email_user: user.email_user,
-					password: user.password,
-				}
-			);
+			const response = await axios.post(API_URL + "/login", {
+				email_user: user.email_user,
+				password: user.password,
+			});
 			return response.data;
 		} catch (error) {
 			if (error.response) {
